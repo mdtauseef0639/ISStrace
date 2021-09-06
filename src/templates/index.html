@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
+    <link 
+        rel="stylesheet" 
+        href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   ></script>
+
+   <script>
+       const SATELLITE_ICON="{{url_for('static',filename='images/satellite.png')}}"
+       const INITIAL_POSE = [parseFloat("{{initial_pose['latitude']}}"),parseFloat("{{initial_pose['longitude']}}")]
+   </script>
+</head>
+<body>
+    <div id="__map"></div>
+
+    <script src="{{url_for('static',filename='app.js')}}"></script>
+    <footer>
+        <p>Md Tauseef Kamal</p>
+    </footer>
+</body>
+</html>
